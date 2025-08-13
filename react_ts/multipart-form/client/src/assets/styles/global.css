@@ -1,0 +1,57 @@
+.glass {
+  background: rgba(255, 255, 255, 0.1);         /* Semi-transparent white */
+  border-radius: 0.7rem;                          /* Large rounded corners */
+  box-shadow: 0 4px 32px rgba(0,0,0,0.15);      /* Soft shadow */
+  border: 1px solid rgba(255,255,255,0.4);      /* Subtle white border */
+  backdrop-filter: blur(16px);                  /* Frosted blur */
+  -webkit-backdrop-filter: blur(16px);          /* Frosted blur for Safari/WebKit */
+  padding: 1.2rem;                                /* Padding */
+  color: #222;                                  /* Text color for
+  margin: 2rem auto;                            /* Optional: center on page */
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem 0;
+    /* width: 100%; */
+}
+.form-field label{
+    color: #fcf51e;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+.form-field input, .form-field select{
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.3rem;
+    background-color: rgba(255, 255, 255, 0.75);
+    outline: none;
+    border: none;
+    font-size: 0.9rem;
+}
+.form-field input::placeholder{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #afafaf;
+}
+.form-field input:focus{
+    border: 1.56px solid #1e94fc8e;
+    transition: border 0.3s ease-in-out;
+}
+
+
+.no-scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+
+  /* For Firefox */
+  scrollbar-width: none;
+
+  /* For IE, Edge */
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari and Opera */
+}
