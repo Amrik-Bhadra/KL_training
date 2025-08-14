@@ -1,0 +1,23 @@
+{
+  "name": "01_testing_basics",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --runInBand --detectOpenHandles"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/supertest": "^6.0.3",
+    "jest": "^30.0.5",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
