@@ -1,0 +1,15 @@
+jest.fn():
+    --> create a mock function (also called a spy function)
+    --> it does nothing by default
+        --> records how many times it was called
+        --> records with what arguments it was called
+        --> records what the mock function returned
+
+    --> You can then control its behavior by chaining helpers like:
+        --> .mockReturnValue(value) → always returns that value (synchronous).
+        --> .mockResolvedValue(value) → always returns a Promise.resolve(value).
+        --> .mockRejectedValue(error) → always returns a Promise.reject(error).
+
+
+----------------------------------------------------------------------------------------------------
+
