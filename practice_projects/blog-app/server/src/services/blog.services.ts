@@ -1,5 +1,5 @@
 import { CreateBlogInput, UpdateBlogInput } from "../dto/blog.dto";
-import { BlogModel, IBlogDocument } from "../models/blog.model";
+import { BlogModel, IBlog } from "../models/blog.model";
 import { BlogRepository } from "../repositories/blog.repository";
 import { ApiError } from "../utils/apiErrors";
 
@@ -11,7 +11,7 @@ export class BlogService {
         this.repo = repo ?? new BlogRepository(BlogModel);
     }
 
-    async createBlog(playload: CreateBlogInput): Promise<IBlogDocument> {
+    async createBlog(playload: CreateBlogInput): Promise<IBlog> {
         const existing = await this.repo.findByTitle(playload.title);
 
         if(existing) throw new ApiError(409, 'A blog with this title already exists');

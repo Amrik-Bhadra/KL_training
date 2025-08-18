@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-export interface IBlog {
+export interface IBlog extends Document {
     title: string,
     content: string,
     author?: string,
@@ -9,9 +9,7 @@ export interface IBlog {
     updatedAt?: Date,
 }
 
-export interface IBlogDocument extends IBlog, Document {}
-
-const BlogSchema = new Schema<IBlogDocument>({
+const BlogSchema = new Schema<IBlog>({
     title: { type: String, required: true, index: true },
     content: { type: String, required: true },
     author: { type: String },
@@ -20,4 +18,4 @@ const BlogSchema = new Schema<IBlogDocument>({
     timestamps: true
 });
 
-export const BlogModel = model<IBlogDocument>('Blog', BlogSchema);
+export const BlogModel = model<IBlog>('Blog', BlogSchema);
