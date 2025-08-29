@@ -40,11 +40,11 @@ const GsapTo = () => {
   }
 
   const reset = () => {
-    gsap.to(boxRef.current, {
+    gsap.set(boxRef.current, {
       x: 0,
+      y: 0,
       rotation: 0,
       scale: 1,
-      duration: 0.5,
     });
   };
 
