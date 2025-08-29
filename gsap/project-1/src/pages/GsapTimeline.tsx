@@ -115,11 +115,11 @@ const GsapTimeline = () => {
   const handlePause = () => tl.current?.pause();
   const handleReverse = () => tl.current?.reverse();
   const handleRestart = () => tl.current?.restart();
-  const handleTimeScale = (val: number) => tl.current?.timeScale(val)
+  const handleTimeScale = (val: number) => tl.current?.timeScale(val);
 
   const handleResetTimeline = () => {
     // Stop the animation and jump to the beginning
-    tl.current?.seek(0).pause();
+    tl.current?.seek(0).pause().timeScale(1);
 
     // Instantly set all animated properties back to their starting values
     gsap.set(ballRef.current, {
@@ -128,7 +128,10 @@ const GsapTimeline = () => {
       scale: 1,
       rotation: 0,
       backgroundColor: "f72585",
+      
     });
+
+    setProgress(0);
   };
 
   // timeline control ends
@@ -411,7 +414,7 @@ const handleTimeScale = (val: number) => tl.current?.timeScale(val)`}</code>
           <Button onClick={handleRestart} text="Restart" />
           <Button onClick={() => handleTimeScale(2)} text="Timescale (2x)" />
         </div>
-        <div className="flex items-center gap-x-3 w-fit mt-5">
+        <div className="flex flex-col justify-center gap-x-3 w-full mt-5">
           <div
             ref={ballRef}
             style={{
@@ -429,6 +432,20 @@ const handleTimeScale = (val: number) => tl.current?.timeScale(val)`}</code>
           >
             ball
           </div>
+
+          <div
+            id="progressbar"
+            className="w-full bg-gray-700 rounded-full h-2.5 mt-5"
+          >
+            <div
+              className="bg-indigo-400 h-2.5 rounded-full"
+              style={{ width: `${progress * 100}%` }}
+            ></div>
+          </div>
+
+          <p className="text-center text-sm mt-2 font-semibold">
+            Progress: {Math.round(progress * 100)}%
+          </p>
         </div>
       </div>
     </div>
