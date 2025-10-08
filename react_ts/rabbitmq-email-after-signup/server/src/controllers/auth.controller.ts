@@ -19,7 +19,7 @@ export class AuthController {
             const user = await authService.signup(dto.email, dto.password);
             return res.status(201).json({ message: 'Signup successful', data: user });
         } catch (error: any) {
-            return res.status(400).json({ message: error.message });
+            return res.status(500).json({ message: error.message || "Internal Server Error" });
         }
     }
 
@@ -34,7 +34,7 @@ export class AuthController {
             const result = await authService.login(dto.email, dto.password);
             return res.status(200).json(result);
         } catch (error: any) {
-            return res.status(400).json({ message: error.message });
+            return res.status(500).json({ message: error.message || "Internal Server Error" });
         }
     }
 
@@ -59,7 +59,7 @@ export class AuthController {
                 accessToken,
             });
         } catch (error: any) {
-            return res.status(400).json({ message: error.message });
+            return res.status(500).json({ message: error.message || "Internal Server Error" });
         }
     }
 
@@ -73,7 +73,7 @@ export class AuthController {
 
             return res.status(200).json({ message: "Logged out successfully" });
         } catch (error: any) {
-            return res.status(400).json({ message: error.message });
+            return res.status(500).json({ message: error.message || "Internal Server Error" });
         }
     }
 
@@ -135,7 +135,7 @@ export class AuthController {
             const user = await authService.getUserProfile(userId);
             return res.status(200).json({ user });
         } catch (error: any) {
-            return res.status(400).json({ message: error.message });
+            return res.status(500).json({ message: error.message || "Internal Server Error" });
         }
     }
 
