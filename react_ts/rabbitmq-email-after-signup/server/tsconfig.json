@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                /* Specify ECMAScript target version */
+    "module": "CommonJS",               /* Specify module code generation */
+    "rootDir": "./src",                 /* Specify the root directory of input files */
+    "outDir": "./dist",                 /* Redirect output structure to the directory */
+    "esModuleInterop": true,            /* Enables compatibility with CommonJS modules */
+    "strict": true,                     /* Enable all strict type-checking options */
+    "skipLibCheck": true,               /* Skip type checking of declaration files */
+    "forceConsistentCasingInFileNames": true,
+    // Required for decorators
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": ["src/**/*"],              /* Specifies which files to include */
+  "exclude": ["node_modules"]           /* Specifies which files to exclude */
+}   
